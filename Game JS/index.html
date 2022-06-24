@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<title>Українське серце</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="stylesheet" href="css/style_right_blocks.css">
+<link rel="shortcut icon" href="images/heart.ico" type="image/x-icon"> 
+</head>
+<body>
+<div id="place">
+<center>
+    <img src="images/mapcopy.svg" usemap="#image-map">
+    <map id="image-map">
+        <area id="belarus" alt="Білорусь" title="Білорусь" coords="395,197,375,209,366,221,360,246,358,261,351,277,341,294,323,308,308,309,312,324,319,341,320,354,313,370,320,379,331,381,352,369,374,366,399,368,416,372,439,366,460,361,483,360,487,347,496,325,508,315,524,302,527,283,505,263,491,252,467,231,449,212,437,205,420,210" shape="poly">
+        <area id="muscovy" alt="Московітська Антинародна Республіка" title="Московітська Антинародна Республіка" coords="477,166,465,175,457,188,463,206,475,224,492,242,513,259,535,278,553,292,574,298,597,317,633,338,651,335,652,312,647,281,637,255,628,224,608,210,578,198,538,186,504,174" shape="poly">
+        <area id="poland" alt="Польща" title="Польща" coords="298,312,312,350,304,362,302,384,311,400,316,414,322,425,326,435,325,447,311,463,300,479,300,487,278,490,257,491,241,498,226,493,214,492,193,480,167,472,146,467,125,455,110,446,104,423,101,390,89,368,88,338,121,324,142,312,167,297,188,313,211,309,246,304,273,303,292,305" shape="poly">
+    </map>
+</center>
+</div>
+<header id="army" title="Солдати">
+    <img src="images/ak47.ico" id="ak">
+    <span id="manpower">    </span><span> тис.</span>
+</header>
+<header id="tanks" title="БМП та танки">
+    <img src="images/tank.png" id="tank">
+    <span id="tankpower">   </span><span> тис.</span>
+</header>
+<header id="planes" title="Літаки">
+    <img src="images/plane.png" id="plane">
+    <span id="planepower">  </span><span> тис.</span>
+</header>
+<section>
+    <img id="flag" src="images/flag.png" title="Україна">
+    <span id="name">Україна</span>
+    <span id="ideology">
+    <select>
+        <option>Націоналізм</option>
+        <option>Нацизм</option>
+        <option>Фашизм</option>
+        <option>Соціалізм</option>
+        <option>Анархізм</option>
+        <option>Консерватизм</option>
+        <option>Лібералізм</option>
+        <option>Фемінізм</option>
+      </select>
+    </span>
+</section>   
+<!--Кнопка паузи-->
+<content title="Меню паузи" onclick="pauseBlock()">
+    <img id="pause" src="images/pause.png">
+</content>
+<!--Кнопка паузи-->
+<!--Кнопка допомоги-->
+<main title="Допомога" id="help_botton">
+    <img id="help" src="images/help.png">
+</main>
+<!--Кнопка допомоги-->
+<!--Меню паузи-->
+<center>
+    <div id="pause-menu">
+        <h3 id="pause-text">Пауза</h3>
+        <button id="continue">Продовжити гру</button>
+        <button id="reload" onclick="location.reload();">Нова гра</button>
+        <button id="pause-exit" onclick="window.close(); return false;">Закінчити гру</button>
+    </div>
+</center>
+<!--Меню паузи-->
+<!--Меню вибору президента-->
+    <div id="country-menu">
+        <center>
+            <img id="president" src="images/presidents/1.jpg">
+            <p id="president-name">Леодін Кравчук</p>
+            <button class="country-button" id="president-reselect" onclick="reselectPresident();">Переобрати</button>
+        </center>
+    </div>    
+<!--Меню вибору президента-->
+<!--Меню зміни назви держави-->
+<div id="rename-menu">
+    <center>
+        <input id="country-name" minlength="1" maxlength="25" placeholder="Змінити назву">
+        <button id="rename-button" onclick="renameCountry();">Підтвердити</button>
+    </center>
+</div>    
+<!--Меню зміни назви держави-->
+<!--Меню допомоги-->
+<dialog id="help-menu">
+    <span id="close_help" style="cursor:pointer;">Закрити</span>
+    <div id="help-place">
+        <dl>
+            <dt>Управління</dt>
+            <dd>Щоб відкрити будь-яке вікно взмаємодії, треба натиснути на об'єкт 1 раз, а щоб закрити - 2 рази.</dd>
+            <dt>Вибори президента</dt>
+            <dd>Вибирати президента можна нескінченну кількість разів<br><i>Треба натиснути на прапор</i></dd>
+            <dt>Зміна назви держави</dt>
+            <dd>Змінювати назву держави можна змінювати нескінченну кількість разів<br><i>Треба натиснути на поточну назву держави</i></dd>
+            <dt>Зміна ідеології держави</dt>
+            <dd>Змінювати ідеологію держави можна змінювати нескінченну кількість разів<br><i>Треба натиснути на поточну ідеологію держави та вибрати зі списку потрібну</i></dd>
+            <dt>Вихід у меню паузи</dt>
+            <dd><i>Треба натиснути на значок паузи</i></dd>
+        </dl>
+    </div>
+</dialog>    
+<!--Меню допомоги-->
+<!--Меню взаємодії держав-->
+<!--Білорусь-->
+<div id="communication-menu-belarus">
+    <center>
+        <p id="belarus-name">Білорусь</p>
+        <button id="war-belarus">Оголосити війну</button>
+        <button id="communication-menu-belarus-close">Закрити вікно</button>
+    </center>
+</div>    
+<!--Польща-->
+<div id="communication-menu-poland">
+    <center>
+        <p id="poland-name">Польща</p>
+        <button id="war-poland">Оголосити війну</button>
+        <button id="communication-menu-poland-close">Закрити вікно</button>
+    </center>
+</div>    
+<!--Московська Антинародна Республіка-->
+<div id="communication-menu-muscovy">
+    <center>
+        <p id="muscovy-name" title="московська Антинародна Республіка">МАР</p>
+        <button id="war-muscovy">Оголосити війну</button>
+        <button id="communication-menu-muscovy-close">Закрити вікно</button>
+    </center>
+</div>    
+<!--Меню взаємодії держав-->
+<div id="hello">
+    <center>
+    <p id="hello-text">
+        Вітаю тебе у грі <b>"Українське серце"</b>!
+        <br>
+        Тут ти зможеш відчути себе лідером держави Україна.
+        <br>
+        Бажаю успіхів!
+    </p>
+    </center>
+</div>
+</body>
+<script src='js/script.js'></script>
+</html>
